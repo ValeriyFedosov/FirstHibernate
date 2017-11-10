@@ -14,12 +14,12 @@ public class Main {
     public static void main(String[] args) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         session.beginTransaction();
-        List<PersonEntity> list = new LinkedList<PersonEntity>();
+        List<PersonEntity> list = new LinkedList<>();
         PersonEntity personEntity = new PersonEntity();
-        personEntity.setFio("Ustiuhova Yevheniia S.");
+        personEntity.setFio("Person 1");
         list.add(personEntity);
         PersonEntity anotherPerson = new PersonEntity();
-        anotherPerson.setFio("Ustiuhov Anton S.");
+        anotherPerson.setFio("Person 2");
         list.add(anotherPerson);
         for (PersonEntity person : list) {
             session.save(person);

@@ -1,9 +1,5 @@
 package ua.ustiuhova.entity;
 
-import org.hibernate.annotations.Generated;
-import org.hibernate.annotations.GenerationTime;
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 
 /**
@@ -16,10 +12,7 @@ public class PersonEntity {
     private String fio;
 
     @Id
-/*    @GenericGenerator(name = "generator", strategy = "increment")
-    @GeneratedValue(generator = "generator")*/
-//    @Generated(GenerationTime.ALWAYS)
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;
